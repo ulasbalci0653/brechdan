@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Utensils, Sparkles, Clock } from "lucide-react";
 import { BUSINESS_INFO } from "@/data/business";
+import OpenStatusBadge from "@/components/OpenStatusBadge";
 
 export default function Hero() {
   return (
@@ -28,11 +29,13 @@ export default function Hero() {
         <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/20 to-black/60 pointer-events-none" />
       </div>
 
+      {/* Top Right Live Open/Closed Status Badge */}
+      <div className="absolute top-24 sm:top-28 right-4 sm:right-8 lg:right-12 z-20">
+        <OpenStatusBadge />
+      </div>
+
       {/* Decorative Star Accents */}
       <div className="absolute top-28 left-8 sm:left-16 text-[#E05A2B]/40 select-none pointer-events-none text-3xl sm:text-4xl font-serif z-10">
-        ✦
-      </div>
-      <div className="absolute top-36 right-8 sm:right-20 text-[#FAF7F0]/30 select-none pointer-events-none text-2xl sm:text-3xl font-serif z-10">
         ✦
       </div>
       <div className="absolute bottom-28 left-12 sm:left-24 text-[#FAF7F0]/25 select-none pointer-events-none text-2xl font-serif z-10">

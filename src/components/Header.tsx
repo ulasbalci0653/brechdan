@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, MapPin, Phone, Instagram, Sparkles, UtensilsCrossed } from "lucide-react";
 import { BUSINESS_INFO } from "@/data/business";
+import OpenStatusBadge from "@/components/OpenStatusBadge";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -87,7 +88,9 @@ export default function Header() {
           </nav>
 
           {/* Header Action CTAs */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
+            <OpenStatusBadge className="hidden xl:inline-flex" />
+
             <Link
               href={BUSINESS_INFO.contact.googleMapsUrl}
               target="_blank"
@@ -116,17 +119,20 @@ export default function Header() {
           </div>
 
           {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menüyü Aç / Kapat"
-            className={`lg:hidden p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E05A2B] ${
-              isScrolled
-                ? "text-[#1B4332] hover:bg-[#E5DEC9]/40"
-                : "text-[#FAF7F0] hover:bg-white/10"
-            }`}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <OpenStatusBadge className="text-[10px] px-2.5 py-1" />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Menüyü Aç / Kapat"
+              className={`p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E05A2B] ${
+                isScrolled
+                  ? "text-[#1B4332] hover:bg-[#E5DEC9]/40"
+                  : "text-[#FAF7F0] hover:bg-white/10"
+              }`}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -155,6 +161,11 @@ export default function Header() {
                 >
                   <X className="w-5 h-5" />
                 </button>
+              </div>
+
+              {/* Status in mobile drawer */}
+              <div className="mt-4">
+                <OpenStatusBadge className="w-full justify-center" />
               </div>
 
               {/* Drawer Links */}
