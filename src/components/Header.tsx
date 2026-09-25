@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, MapPin, Phone, Instagram, Sparkles, UtensilsCrossed } from "lucide-react";
 import { BUSINESS_INFO } from "@/data/business";
+import OpenStatusBadge from "@/components/OpenStatusBadge";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,16 +35,16 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-[#FAF7F0]/95 backdrop-blur-md shadow-sm border-b border-[#E5DEC9] py-3 text-[#1A1D1B]"
-            : "bg-[#111413]/60 backdrop-blur-md border-b border-white/10 py-4 md:py-5 text-[#FAF7F0]"
+            : "bg-[#111413]/60 backdrop-blur-md border-b border-white/10 py-3.5 sm:py-4 md:py-5 text-[#FAF7F0]"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between gap-2">
           {/* Logo / Brand Name */}
           <Link
             href="#hero"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#E05A2B] rounded-lg p-1 shrink-0"
+            className="flex items-center gap-2 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-[#E05A2B] rounded-lg p-1 shrink-0"
           >
-            <div className={`relative w-9 h-9 sm:w-10 sm:h-10 rounded-full p-1 flex items-center justify-center overflow-hidden shadow-inner border transition-transform group-hover:scale-105 ${
+            <div className={`relative w-8 h-8 sm:w-10 sm:h-10 rounded-full p-1 flex items-center justify-center overflow-hidden shadow-inner border transition-transform group-hover:scale-105 ${
               isScrolled
                 ? "bg-[#1B4332] border-[#E05A2B]/40"
                 : "bg-white/10 backdrop-blur-md border-white/30"
@@ -58,12 +59,12 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className={`font-serif text-2xl sm:text-3xl tracking-wider font-bold leading-none transition-colors ${
+              <span className={`font-serif text-xl sm:text-2xl md:text-3xl tracking-wider font-bold leading-none transition-colors ${
                 isScrolled ? "text-[#1B4332]" : "text-[#FAF7F0]"
               }`}>
                 BRECHDAN
               </span>
-              <span className="text-[10px] sm:text-[11px] font-semibold tracking-widest text-[#E05A2B] uppercase mt-0.5">
+              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold tracking-widest text-[#E05A2B] uppercase mt-0.5">
                 Bahçelievler · Ankara
               </span>
             </div>
@@ -86,7 +87,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Header Action CTAs */}
+          {/* Desktop Header Action CTAs */}
           <div className="hidden sm:flex items-center gap-3 shrink-0">
             <Link
               href={BUSINESS_INFO.contact.googleMapsUrl}
@@ -115,18 +116,19 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Mobile Right Section: Open Status Badge + 3-line Hamburger Button */}
+          <div className="flex items-center gap-2 lg:hidden shrink-0">
+            <OpenStatusBadge className="text-[10px] px-2.5 py-1" />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Menüyü Aç / Kapat"
-              className={`p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E05A2B] ${
+              className={`p-1.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E05A2B] ${
                 isScrolled
                   ? "text-[#1B4332] hover:bg-[#E5DEC9]/40"
                   : "text-[#FAF7F0] hover:bg-white/10"
               }`}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -157,6 +159,11 @@ export default function Header() {
                 >
                   <X className="w-5 h-5" />
                 </button>
+              </div>
+
+              {/* Status in mobile drawer */}
+              <div className="mt-4">
+                <OpenStatusBadge className="w-full justify-center" />
               </div>
 
               {/* Drawer Links */}

@@ -29,8 +29,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/20 to-black/60 pointer-events-none" />
       </div>
 
-      {/* Top Right Live Open/Closed Status Badge */}
-      <div className="absolute top-24 sm:top-28 right-4 sm:right-8 lg:right-12 z-20">
+      {/* Top Right Live Open/Closed Status Badge (Desktop Only) */}
+      <div className="hidden md:block absolute top-28 lg:top-32 right-6 lg:right-12 z-20">
         <OpenStatusBadge />
       </div>
 
@@ -49,12 +49,12 @@ export default function Hero() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col items-center text-center space-y-6 sm:space-y-7">
         
         {/* Top Location & Info Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-[#FAF7F0] text-xs font-semibold tracking-wider shadow-lg">
-          <span className="text-[#E05A2B] font-bold text-sm">✦</span>
-          <span className="uppercase text-[11px] sm:text-xs">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-[#FAF7F0] text-[10px] sm:text-xs font-semibold tracking-wider shadow-lg max-w-full">
+          <span className="text-[#E05A2B] font-bold text-xs sm:text-sm">✦</span>
+          <span className="uppercase text-[10px] sm:text-xs leading-tight">
             BAHÇELİEVLER / ANKARA · ARTISAN BREAKFAST & SANDWICH
           </span>
-          <span className="text-[#E05A2B] font-bold text-sm">✦</span>
+          <span className="text-[#E05A2B] font-bold text-xs sm:text-sm">✦</span>
         </div>
 
         {/* Brand Big Serif Title & Subtitle */}
