@@ -1,7 +1,5 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FeaturedProducts from "@/components/FeaturedProducts";
-import StorySection from "@/components/StorySection";
 import BreakfastSection from "@/components/BreakfastSection";
 import MenuSection from "@/components/MenuSection";
 import AtmosphereSection from "@/components/AtmosphereSection";
@@ -21,12 +19,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero />
-
-      {/* Signature & Favorite Bites */}
-      <FeaturedProducts />
-
-      {/* Artisan Bread & Sourdough Ciabatta Story */}
-      <StorySection />
 
       {/* Breakfast & Platter Showcase */}
       <BreakfastSection />

@@ -21,10 +21,8 @@ export default function Header() {
 
   const navLinks = [
     { name: "Ana Sayfa", href: "#hero" },
-    { name: "Favoriler", href: "#favoriler" },
-    { name: "Sandviçler", href: "#sandvicler" },
     { name: "Kahvaltı", href: "#kahvalti" },
-    { name: "Tam Menü", href: "#menu" },
+    { name: "Menü & Sandviçler", href: "#menu" },
     { name: "Galeri", href: "#galeri" },
     { name: "Bizi Bulun", href: "#konum" },
   ];
