@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, MapPin, Phone, Instagram, Sparkles, UtensilsCrossed } from "lucide-react";
 import { BUSINESS_INFO } from "@/data/business";
-import OpenStatusBadge from "@/components/OpenStatusBadge";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,7 +41,7 @@ export default function Header() {
           {/* Logo / Brand Name */}
           <Link
             href="#hero"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#E05A2B] rounded-lg p-1"
+            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#E05A2B] rounded-lg p-1 shrink-0"
           >
             <div className={`relative w-9 h-9 sm:w-10 sm:h-10 rounded-full p-1 flex items-center justify-center overflow-hidden shadow-inner border transition-transform group-hover:scale-105 ${
               isScrolled
@@ -71,12 +70,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:transition-all after:duration-200 ${
+                className={`text-sm font-medium whitespace-nowrap transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:transition-all after:duration-200 ${
                   isScrolled
                     ? "text-[#1A1D1B] hover:text-[#1B4332] after:bg-[#1B4332] hover:after:w-full"
                     : "text-[#FAF7F0]/90 hover:text-white after:bg-[#E05A2B] hover:after:w-full"
@@ -88,14 +87,12 @@ export default function Header() {
           </nav>
 
           {/* Header Action CTAs */}
-          <div className="hidden sm:flex items-center gap-2.5">
-            <OpenStatusBadge className="hidden xl:inline-flex" />
-
+          <div className="hidden sm:flex items-center gap-3 shrink-0">
             <Link
               href={BUSINESS_INFO.contact.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-full transition-all hover:scale-105 ${
+              className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-full transition-all hover:scale-105 ${
                 isScrolled
                   ? "text-[#1B4332] bg-[#E8F0EA] hover:bg-[#D5E4D8] border border-[#B7CDB9]"
                   : "text-[#FAF7F0] bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-sm"
@@ -120,7 +117,6 @@ export default function Header() {
 
           {/* Mobile Hamburger Button */}
           <div className="flex items-center gap-2 lg:hidden">
-            <OpenStatusBadge className="text-[10px] px-2.5 py-1" />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Menüyü Aç / Kapat"
@@ -161,11 +157,6 @@ export default function Header() {
                 >
                   <X className="w-5 h-5" />
                 </button>
-              </div>
-
-              {/* Status in mobile drawer */}
-              <div className="mt-4">
-                <OpenStatusBadge className="w-full justify-center" />
               </div>
 
               {/* Drawer Links */}
