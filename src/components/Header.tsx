@@ -69,7 +69,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -86,12 +86,28 @@ export default function Header() {
           </nav>
 
           {/* Desktop Header Action CTAs */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0">
+          <div className="hidden sm:flex items-center gap-2.5 shrink-0">
+            {/* Instagram CTA Button */}
+            <Link
+              href={BUSINESS_INFO.contact.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-full transition-all hover:scale-105 ${
+                isScrolled
+                  ? "text-[#E05A2B] bg-[#FBEBE4] hover:bg-[#F7D8CB] border border-[#E05A2B]/30"
+                  : "text-[#FAF7F0] bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-sm"
+              }`}
+            >
+              <Instagram className="w-3.5 h-3.5 text-[#E05A2B]" />
+              <span>Instagram</span>
+            </Link>
+
+            {/* Directions CTA Button */}
             <Link
               href={BUSINESS_INFO.contact.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-full transition-all hover:scale-105 ${
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-full transition-all hover:scale-105 ${
                 isScrolled
                   ? "text-[#1B4332] bg-[#E8F0EA] hover:bg-[#D5E4D8] border border-[#B7CDB9]"
                   : "text-[#FAF7F0] bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-sm"
@@ -101,6 +117,7 @@ export default function Header() {
               <span>Yol Tarifi</span>
             </Link>
 
+            {/* Menu CTA Button */}
             <Link
               href="#menu"
               className={`inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-[#FAF7F0] rounded-full shadow-sm hover:shadow transition-all hover:scale-105 ${
