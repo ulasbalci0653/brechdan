@@ -6,7 +6,6 @@ import AtmosphereSection from "@/components/AtmosphereSection";
 import GallerySection from "@/components/GallerySection";
 import ReviewsSection from "@/components/ReviewsSection";
 import LocationSection from "@/components/LocationSection";
-import InstagramSection from "@/components/InstagramSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import MobileStickyBar from "@/components/MobileStickyBar";
@@ -37,9 +36,6 @@ export default function Home() {
 
       {/* Location, Hours, Contact & Interactive Map */}
       <LocationSection />
-
-      {/* Official Instagram Feed */}
-      <InstagramSection />
 
       {/* FAQ & SEO Accordion */}
       <FAQSection />
